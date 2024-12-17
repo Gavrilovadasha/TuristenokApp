@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/regFragment"
+        android:name="daa.gv.turistenokapp.RegFragment"
+        android:label="RegFragment"
+        tools:layout="@layout/fragment_registration">
+
+        <action
+            android:id="@+id/action_reg_to_sign_in"
+            app:destination="@id/avtorizFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/avtorizFragment"
+        android:name="daa.gv.turistenokapp.AvtorizFragment"
+        android:label="Авторизация"
+        tools:layout="@layout/fragment_avtoriz">
+
+        <!-- Переход с фрагмента авторизации на фрагмент профиля -->
+        <action
+            android:id="@+id/action_avtorizFragment_to_regFragment"
+            app:destination="@id/fragment_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="daa.gv.turistenokapp.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile">
+
+    </fragment>
+
+
+
+</navigation>

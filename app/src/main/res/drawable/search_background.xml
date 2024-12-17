@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Устанавливаем цвет фона -->
+    <solid android:color="#FFFFFF" /> <!-- Белый цвет фона -->
+
+    <size android:width="5dp"/>
+    <!-- Закругленные углы -->
+    <corners android:radius="30dp" />
+
+    <!-- Толщина рамки -->
+    <stroke
+        android:width="0.5dp"
+        android:color="#CCCCCC" /> <!-- Серый цвет рамки -->
+
+    <!-- Внутренние отступы (опционально) -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
+</shape>

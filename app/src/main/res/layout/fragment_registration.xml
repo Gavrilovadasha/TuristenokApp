@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_regist"
+    android:background="@drawable/back_profile"
+    tools:context=".RegFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:textColorHint="#5C5252">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_user_name"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@drawable/baseline_assignment_ind_24"
+            android:drawablePadding="10dp"
+            android:hint="Имя пользователя"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#5C5252"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText,RtlSymmetry,TextFields,TextSizeCheck"
+            android:autofillHints=""/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="75dp"
+        android:textColorHint="#5C5252">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_email"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawablePadding="10dp"
+            android:hint="E-mail"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#5C5252"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText,RtlSymmetry,TextFields,TextSizeCheck"
+            android:autofillHints=""/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="135dp"
+        android:textColorHint="#5C5252">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_pass"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@drawable/baseline_admin_panel_settings_24"
+            android:drawablePadding="10dp"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#5C5252"
+            android:textSize="15sp"
+            android:autofillHints=""/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="200dp"
+        android:textColorHint="#5C5252"
+        app:endIconTint="#5C5252"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_pass_repeat"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@drawable/baseline_admin_panel_settings_24"
+            android:drawablePadding="10dp"
+            android:hint="Повторите пароль"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText,RtlSymmetry,TextSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_reg"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="290dp"
+        android:backgroundTint="#FEF0D3"
+        android:text="Регистрация"
+        android:fontFamily="@font/font"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        tools:ignore="HardcodedText,TextSizeCheck"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="340dp"
+        android:text="Авторизация через"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_vk"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/img_btn_reg"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vk"
+        tools:ignore="ContentDescription,DuplicateSpeakableTextCheck,HardcodedText,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_google"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/img_btn_reg"
+        android:scaleType="fitCenter"
+        android:src="@drawable/google"
+        tools:ignore="ContentDescription,HardcodedText,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="440dp"
+        android:text="Уже есть аккаунт?"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txt_sign_in"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="475dp"
+        android:text="@string/text_sign_in"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="TextSizeCheck" />
+
+</FrameLayout>

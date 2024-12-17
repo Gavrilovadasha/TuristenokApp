@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestGeogrFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ViewPager2 для перелистывания изображений -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="410dp"
+                android:layout_height="300dp" />
+
+            <!-- Индикатор текущей фотографии -->
+            <TextView
+                android:id="@+id/indicator"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/back_image_item"
+                android:text="1/4"
+                android:textAlignment="center"
+                android:fontFamily="@font/font"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ресторан «География»"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:layout_marginTop="320dp"
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:text="РЕСТОРАНЫ"
+                android:fontFamily="@font/font"
+                android:textColor="#A8A2AA"
+                android:layout_marginTop="350dp"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/siteLinkRestGeogr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="370dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/font"
+                android:minHeight="48dp"
+                android:text="Перейти на сайт"
+                android:textColor="#1791EA"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|"
+                android:textColor="#1791EA"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                tools:ignore="HardcodedText"
+                android:fontFamily="@font/font"
+                android:layout_marginTop="370dp"
+                android:layout_marginLeft="150dp"/>
+
+
+            <TextView
+                android:id="@+id/mapLinkRestGeogr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="370dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/font"
+                android:minHeight="48dp"
+                android:text="Открыть карту"
+                android:textColor="#1791EA"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="410dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:text="О ресторане"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/hotelsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="450dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/description"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"/>
+
+        </FrameLayout>
+    </ScrollView>
+</FrameLayout>

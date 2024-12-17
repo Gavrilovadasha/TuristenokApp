@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_avtor"
+    android:background="@drawable/back_profile"
+    tools:context=".RegFragment">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:textColorHint="#5C5252">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_email_avt"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawablePadding="10dp"
+            android:hint="E-mail"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#5C5252"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText,RtlSymmetry,TextFields,TextSizeCheck"
+            android:autofillHints=""/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="75dp"
+        android:textColorHint="#5C5252">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_pass_avt"
+            android:layout_width="330dp"
+            android:layout_height="48dp"
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@drawable/baseline_admin_panel_settings_24"
+            android:drawablePadding="10dp"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#5C5252"
+            android:textSize="15sp"
+            android:autofillHints=""/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/forgot_pass"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="130dp"
+        android:text="Забыли пароль?"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        />
+
+    <Button
+        android:id="@+id/btn_avt"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="190dp"
+        android:backgroundTint="#FEF0D3"
+        android:text="Войти"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        app:cornerRadius="10dp">
+    </Button>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="115dp"
+        android:text="Авторизация через"
+        android:fontFamily="@font/font"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black" />
+
+    <ImageButton
+        android:id="@+id/btn_vk_avt"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="130dp"
+        android:background="@drawable/img_btn_reg"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vk"/>
+
+    <ImageButton
+        android:id="@+id/btn_google_avt"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/img_btn_reg"
+        android:scaleType="fitCenter"
+        android:src="@drawable/google"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="115dp"
+        android:text="Не зарегистрированы?"
+        android:fontFamily="@font/font"
+        android:textSize="18dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/txt_sign_up"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="380dp"
+        android:text="@string/text_sign_up"
+        android:fontFamily="@font/font"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        tools:ignore="TextSizeCheck" />
+
+</FrameLayout>

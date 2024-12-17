@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FEF0D3"
+    android:id="@+id/fragment_home"
+    tools:context=".HomeFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="5dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+
+            <!-- Поле для ввода текста поиска -->
+            <EditText
+                android:id="@+id/search_input1"
+                android:layout_width="355dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/search_background"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Поиск"
+                android:inputType="text"
+                android:padding="5dp"
+                android:textColorHint="#5C5252"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="400dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="-10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:background="@drawable/slider_radius"
+                android:clipToOutline="true" />
+
+            <TextView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="28dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Рекомендуемые места"
+                android:layout_gravity="left"/>
+
+            <ImageButton
+                android:id="@+id/btn_detinets"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="300dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/button_dostoprim"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/detinets"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="475dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Новгородский кремль (Детинец)"
+                android:layout_gravity="left"/>
+
+            <ImageButton
+                android:id="@+id/btn_kremlin_rostov"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="300dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/button_dostoprim"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/kremlin_rostov"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="475dp"
+                android:layout_marginLeft="200dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Государственный музей-заповедник Ростовский кремль"
+                android:layout_gravity="left"/>
+
+
+            <ImageButton
+                android:id="@+id/btn_troitskii_sobor"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="530dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/button_dostoprim"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/svyat_sobor_pskov2"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="700dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Свято-Троицкий кафедральный собор"
+                android:layout_gravity="left"/>
+
+
+            <ImageButton
+                android:id="@+id/btn_nikolsk_monast_st_ladoga"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="530dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/button_dostoprim"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/nikolsk_movast_st_ladoga"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="700dp"
+                android:layout_marginLeft="200dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Никольский мужской монастырь"
+                android:layout_gravity="left"/>
+
+            <ImageButton
+                android:id="@+id/btn_muzeum_rostov_rupech"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="750dp"
+                android:layout_marginLeft="200dp"
+                android:background="@drawable/button_dostoprim"
+                android:src="@drawable/muzeum_rostov_rupech1"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:clipToOutline="true" />
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="920dp"
+                android:layout_marginLeft="200dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Музей ростовского купечества"
+                android:layout_gravity="left"/>
+
+            <ImageButton
+                android:id="@+id/btn_gran_palata_vn"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="750dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/button_dostoprim"
+                android:src="@drawable/gran_palata_vn"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:clipToOutline="true" />
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="920dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Владычная (Грановитая) палата"
+                android:layout_gravity="left"/>
+        </FrameLayout>
+</ScrollView>
+</LinearLayout>
