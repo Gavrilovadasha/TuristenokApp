@@ -26,6 +26,7 @@ class SearchFragment : Fragment() {
         val btnRostov : ImageButton = view.findViewById(R.id.Rostov)
 
 
+
         // Устанавливаем слушатель кликов для Великого Новгорода
         btnVN.setOnClickListener {
             // Создаём новый фрагмент
