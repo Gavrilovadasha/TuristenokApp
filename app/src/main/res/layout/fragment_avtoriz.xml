@@ -1,140 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_avtor"
-    android:background="@drawable/back_profile"
-    tools:context=".RegFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/avtor_back">
 
-
+    <!-- Email -->
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:id="@+id/input_email"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:textColorHint="#5C5252">
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textColorHint="#5C5252"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_email_avt"
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/edit_text_style"
-            android:drawableStart="@drawable/baseline_email_24"
-            android:drawablePadding="10dp"
             android:hint="E-mail"
-            android:paddingStart="10dp"
             android:textColor="@color/black"
             android:textColorHint="#5C5252"
             android:textSize="15sp"
-            tools:ignore="HardcodedText,RtlSymmetry,TextFields,TextSizeCheck"
-            android:autofillHints=""/>
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawablePadding="10dp"
+            android:paddingStart="10dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Password -->
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:id="@+id/input_password"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textColorHint="#5C5252"
         app:passwordToggleEnabled="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="75dp"
-        android:textColorHint="#5C5252">
+        app:layout_constraintTop_toBottomOf="@id/input_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_pass_avt"
-            android:layout_width="330dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/edit_text_style"
-            android:drawableStart="@drawable/baseline_admin_panel_settings_24"
-            android:drawablePadding="10dp"
             android:hint="Пароль"
             android:inputType="textPassword"
-            android:paddingStart="10dp"
             android:textColor="@color/black"
             android:textColorHint="#5C5252"
             android:textSize="15sp"
-            android:autofillHints=""/>
+            android:drawableStart="@drawable/baseline_admin_panel_settings_24"
+            android:drawablePadding="10dp"
+            android:paddingStart="10dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Forgot password -->
     <TextView
         android:id="@+id/forgot_pass"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="130dp"
         android:text="Забыли пароль?"
-        android:fontFamily="@font/font"
+        android:textSize="14sp"
         android:textColor="@color/black"
-        android:textSize="18dp"
-        />
+        android:fontFamily="@font/font"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/input_password"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Login Button -->
     <Button
         android:id="@+id/btn_avt"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="190dp"
-        android:backgroundTint="#FEF0D3"
         android:text="Войти"
-        android:fontFamily="@font/font"
+        android:backgroundTint="#FEF0D3"
         android:textColor="@color/black"
-        android:textSize="18dp"
-        android:textAlignment="center"
-        app:cornerRadius="10dp">
-    </Button>
-
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:layout_marginLeft="115dp"
-        android:text="Авторизация через"
+        android:textSize="16sp"
         android:fontFamily="@font/font"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:textColor="@color/black" />
+        app:cornerRadius="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/forgot_pass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- "Авторизация через" -->
+    <TextView
+        android:id="@+id/social_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Авторизация через"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_avt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- VK Button -->
     <ImageButton
         android:id="@+id/btn_vk_avt"
         android:layout_width="55dp"
         android:layout_height="40dp"
-        android:layout_marginTop="290dp"
-        android:layout_marginLeft="130dp"
         android:background="@drawable/img_btn_reg"
         android:scaleType="fitCenter"
-        android:src="@drawable/vk"/>
+        android:src="@drawable/vk"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/social_title"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Google Button -->
     <ImageButton
         android:id="@+id/btn_google_avt"
         android:layout_width="55dp"
         android:layout_height="40dp"
-        android:layout_marginTop="290dp"
-        android:layout_marginLeft="200dp"
         android:background="@drawable/img_btn_reg"
         android:scaleType="fitCenter"
-        android:src="@drawable/google"/>
+        android:src="@drawable/google"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toTopOf="@id/btn_vk_avt"
+        app:layout_constraintStart_toEndOf="@id/btn_vk_avt" />
 
+    <!-- "Не зарегистрированы?" -->
     <TextView
-        android:layout_width="200dp"
+        android:id="@+id/not_registered"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="115dp"
         android:text="Не зарегистрированы?"
+        android:textSize="16sp"
+        android:textColor="@color/black"
         android:fontFamily="@font/font"
-        android:textSize="18dp"
-        android:textColor="@color/black"/>
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_vk_avt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Sign up link -->
     <TextView
         android:id="@+id/txt_sign_up"
-        android:layout_width="110dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="380dp"
         android:text="@string/text_sign_up"
-        android:fontFamily="@font/font"
-        android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="TextSizeCheck" />
-
-</FrameLayout>
+        android:textColor="@color/black"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/not_registered"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

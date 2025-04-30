@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -84,12 +85,19 @@ class ProfileFragment : Fragment() {
         avatarButton.setOnClickListener {
             openGallery()
         }
+        // Загрузка данных пользователя
+        loadUserData()
 
         // Инициализация TextView
         userNameDisplay = view.findViewById(R.id.user_name_display)
 
-        // Загрузка данных пользователя
-        loadUserData()
+        view.findViewById<Button>(R.id.btn_my_routes).setOnClickListener {
+            val myRoutesFragment = MyRoutesFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, myRoutesFragment)
+                .addToBackStack(null)
+                .commit()
+        }
 
         return view
     }

@@ -3,13 +3,434 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StarayaLadogaFragment">
+    android:id="@+id/fragment_vn"
+    android:background="#FEF0D3"
+    tools:context=".VNFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Старая Ладога"
-        android:textSize="50dp"/>
+        android:scrollbars="vertical">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="450dp"
+                android:layout_height="315dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="-20dp"
+                android:background="@drawable/stladogamain" />
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:text="Старая Ладога"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/font"
+                android:textColor="#FAFFC5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="310dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="25dp"
+                android:fontFamily="@font/font"
+                android:textColor="@color/black"
+                android:text="Достопримечательности"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:fillViewport="true"
+                android:layout_marginTop="350dp"
+                android:scrollbars="horizontal">
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="280dp"
+                    android:background="#FEF0D3">
+
+                    <ImageButton
+                        android:id="@+id/btn_ladoga_krepost"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/ladoga_krepost"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="210dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Ладожская крепость"
+                        android:layout_gravity="left"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_nikolsk_monast_st_ladoga"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="230dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/nikolsk_movast_st_ladoga"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="210dp"
+                        android:layout_marginLeft="230dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Никольский мужской монастырь"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_home_Kalyazin"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="450dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/home_kalyazin"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="220dp"
+                        android:layout_marginLeft="450dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Дом П. В. Калязина"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_georg_xram"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="670dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/georg_xram"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="220dp"
+                        android:layout_marginLeft="670dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Георгиевская церковь"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_kurgan"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="890dp"
+                        android:layout_marginRight="25dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/kurgan"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="220dp"
+                        android:layout_marginLeft="890dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Курган и предположительная могила Вещего Олега"/>
+
+                </FrameLayout>
+            </HorizontalScrollView>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginTop="630dp"
+                android:fillViewport="true"
+                android:scrollbars="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ACBD6F">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="25dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/white"
+                        android:text="Отели"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_hotel_st_lad_dacha"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/st_lad_dacha"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/white"
+                        android:text="Гостиница «Староладожская дача»"
+                        android:layout_gravity="left"/>
+
+
+                    <ImageButton
+                        android:id="@+id/btn_hotel_st_lad_usadba"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="230dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/st_lad_usadba"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="230dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/white"
+                        android:text="Арт-коттедж «Староладожская усадьба»"
+                        android:layout_gravity="left"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_hotel_barskii"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="450dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/hotel_barskii"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="450dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/white"
+                        android:text="Отель «Барский»"
+                        android:layout_gravity="left"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_hotel_strekovets"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="670dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/hotel_strekovets"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="670dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/white"
+                        android:text="Гостевой дом «Стрековец»"
+                        android:layout_gravity="left"/>
+
+                </FrameLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="950dp"
+                android:fillViewport="true"
+                android:scrollbars="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#B9E1D9">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="25dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Рестораны/Кафе"/>
+
+
+                    <ImageButton
+                        android:id="@+id/btn_rest_marusya"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/rest_marusya"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Ресторан «Маруся»"
+                        android:layout_gravity="left"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_chaixona_skazka"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="670dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/chaixona_skazka"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="670dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Чайхана «Сказка»"
+                        android:layout_gravity="left"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_rest_geogr"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="450dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/rest_geogr"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="450dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Ресторан «География»"
+                        android:layout_gravity="left"/>
+
+
+                    <ImageButton
+                        android:id="@+id/btn_rest_pryanik"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="230dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/rest_pryanik"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="230dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Ресторан «Пряник»"
+                        android:layout_gravity="left"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_rest_teplo"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="890dp"
+                        android:background="@drawable/button_dostoprim"
+                        android:src="@drawable/rest_teplo"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:clipToOutline="true" />
+
+                    <TextView
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginLeft="890dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/black"
+                        android:text="Траттория «Тепло»"
+                        android:layout_gravity="left"/>
+                </FrameLayout>
+            </HorizontalScrollView>
+        </FrameLayout>
+    </ScrollView>
 </FrameLayout>

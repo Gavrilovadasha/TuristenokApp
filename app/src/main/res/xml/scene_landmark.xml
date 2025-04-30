@@ -1,0 +1,54 @@
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="500">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/reviewsRecyclerView"
+            app:touchAnchorSide="top" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <!-- Начальное положение элементов -->
+        <Constraint
+            android:id="@+id/nameLandmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationY="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/landmarkDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationY="0dp"
+            app:layout_constraintTop_toBottomOf="@id/nameLandmark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <!-- Конечное положение элементов -->
+        <Constraint
+            android:id="@+id/nameLandmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationY="-50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/landmarkDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationY="-30dp"
+            app:layout_constraintTop_toBottomOf="@id/nameLandmark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+</MotionScene>

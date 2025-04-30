@@ -56,4 +56,21 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.1")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+
+
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    implementation ("androidx.fragment:fragment-ktx:1.6.0")
+
+    implementation ("androidx.fragment:fragment-ktx:1.6.0")
+    implementation ("androidx.appcompat:appcompat:1.6.1")
+
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+    implementation ("androidx.transition:transition:1.4.1")
+
+
 }

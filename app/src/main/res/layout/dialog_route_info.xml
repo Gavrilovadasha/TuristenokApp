@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="vertical"
+android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:layout_marginHorizontal="0dp"
+        android:background="@drawable/dialog_background">
+
+        <!-- Заголовок -->
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Информация о маршруте"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="8dp" />
+
+        <!-- Название маршрута -->
+        <TextView
+            android:id="@+id/dialog_name_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Название маршрута"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="8dp" />
+
+        <!-- Текст маршрута -->
+        <TextView
+            android:id="@+id/dialog_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Здесь будет информация о маршруте..."
+            android:textSize="16sp"
+            android:fontFamily="@font/description"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:paddingBottom="0dp" />
+
+        <!-- Кнопка закрытия -->
+        <Button
+            android:id="@+id/dialog_close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Закрыть"
+            android:backgroundTint="#B47765"
+            android:textColor="@color/white"
+            android:fontFamily="@font/font"
+            android:layout_gravity="center_horizontal"
+            app:cornerRadius="20dp"/>
+    </LinearLayout>
+</ScrollView>

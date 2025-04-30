@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Первый слой: фоновое изображение -->
+    <item>
+        <bitmap
+            android:src="@drawable/ornament"
+            android:gravity="center" />
+    </item>
+</layer-list>

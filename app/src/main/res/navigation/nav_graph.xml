@@ -29,13 +29,41 @@
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_profile"
-        android:name="daa.gv.turistenokapp.ProfileFragment"
-        android:label="Профиль"
-        tools:layout="@layout/fragment_profile">
-
+        android:id="@+id/selectRoutesFragment"
+        android:name="daa.gv.turistenokapp.SelectRoutesFragment"
+        android:label="SelectRoutesFragment">
+        <action
+            android:id="@+id/action_selectRoutesFragment_to_routesFragment"
+            app:destination="@id/routesFragment">
+            <argument
+                android:name="routeId"
+                app:argType="string"/>
+        </action>
     </fragment>
 
+    <fragment
+        android:id="@+id/routesFragment"
+        android:name="daa.gv.turistenokapp.RoutesFragment"
+        android:label="RoutesFragment">
+        <argument
+            android:name="routeId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_routesFragment_to_landmarkFragment"
+            app:destination="@id/landmarkFragment">
+            <argument
+                android:name="documentId"
+                app:argType="string"/>
+        </action>
+    </fragment>
 
+    <fragment
+        android:id="@+id/landmarkFragment"
+        android:name="daa.gv.turistenokapp.LandmarkFragment"
+        android:label="LandmarkFragment">
+        <argument
+            android:name="documentId"
+            app:argType="string"/>
+    </fragment>
 
 </navigation>
