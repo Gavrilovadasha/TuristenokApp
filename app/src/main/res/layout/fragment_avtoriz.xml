@@ -62,20 +62,6 @@
             android:paddingStart="10dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Forgot password -->
-    <TextView
-        android:id="@+id/forgot_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Забыли пароль?"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/font"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintTop_toBottomOf="@id/input_password"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <!-- Login Button -->
     <Button
         android:id="@+id/btn_avt"
@@ -90,48 +76,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/forgot_pass"
+        app:layout_constraintTop_toBottomOf="@id/input_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- "Авторизация через" -->
-    <TextView
-        android:id="@+id/social_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Авторизация через"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/font"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/btn_avt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- VK Button -->
-    <ImageButton
-        android:id="@+id/btn_vk_avt"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:background="@drawable/img_btn_reg"
-        android:scaleType="fitCenter"
-        android:src="@drawable/vk"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/social_title"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Google Button -->
-    <ImageButton
-        android:id="@+id/btn_google_avt"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:background="@drawable/img_btn_reg"
-        android:scaleType="fitCenter"
-        android:src="@drawable/google"
-        android:layout_marginStart="32dp"
-        app:layout_constraintTop_toTopOf="@id/btn_vk_avt"
-        app:layout_constraintStart_toEndOf="@id/btn_vk_avt" />
 
     <!-- "Не зарегистрированы?" -->
     <TextView
@@ -143,7 +90,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/font"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/btn_vk_avt"
+        app:layout_constraintTop_toBottomOf="@id/btn_avt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

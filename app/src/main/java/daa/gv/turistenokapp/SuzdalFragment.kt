@@ -19,6 +19,15 @@ class SuzdalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Обработка клика по кнопке "назад"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.back_button).setOnClickListener {
+            val fragmentManager = requireActivity().supportFragmentManager
+            if (fragmentManager.backStackEntryCount > 0) {
+                fragmentManager.popBackStack() // Возвращаемся к предыдущему фрагменту
+            } else {
+                requireActivity().finish() // Закрываем активити, если стек пуст
+            }
+        }
         // Обработка клика по кнопке для "Суздальский кремль"
         view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_kremlin_suzdal).setOnClickListener {
             openLandmarkDetail("eJIrp1GFVIQisGzuX7Mw") // Укажите ID нужной достопримечательности

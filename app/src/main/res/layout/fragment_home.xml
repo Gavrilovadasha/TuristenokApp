@@ -34,15 +34,34 @@
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.14"/>
+                app:layout_constraintWidth_percent="0.14"
+                />
+
+            <!-- Заглушка -->
+            <ImageView
+                android:id="@+id/avatar_stub"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/avatar_button"
+                android:src="@drawable/avatar"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.14"
+                android:visibility="visible" />
 
             <!-- Search Input -->
             <TextView
                 android:id="@+id/search_input1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="35dp"
                 android:fontFamily="@font/font"
                 android:maxLines="2"
                 android:textColor="@color/black"

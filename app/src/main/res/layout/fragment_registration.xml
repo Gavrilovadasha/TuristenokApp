@@ -141,48 +141,6 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp" />
 
-    <!-- Auth through -->
-    <TextView
-        android:id="@+id/social_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Авторизация через"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/font"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btn_reg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
-
-    <!-- VK Button -->
-    <ImageButton
-        android:id="@+id/btn_vk"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:background="@drawable/img_btn_reg"
-        android:scaleType="fitCenter"
-        android:src="@drawable/vk"
-        android:contentDescription="VK"
-        app:layout_constraintTop_toBottomOf="@id/social_title"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp" />
-
-    <!-- Google Button -->
-    <ImageButton
-        android:id="@+id/btn_google"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:background="@drawable/img_btn_reg"
-        android:scaleType="fitCenter"
-        android:src="@drawable/google"
-        android:contentDescription="Google"
-        app:layout_constraintTop_toTopOf="@id/btn_vk"
-        app:layout_constraintStart_toEndOf="@id/btn_vk"
-        android:layout_marginStart="32dp" />
-
     <!-- Already have account -->
     <TextView
         android:id="@+id/text_already_have"
@@ -192,7 +150,7 @@
         android:textSize="18sp"
         android:textColor="@color/black"
         android:fontFamily="@font/font"
-        app:layout_constraintTop_toBottomOf="@id/btn_vk"
+        app:layout_constraintTop_toBottomOf="@id/btn_reg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp" />

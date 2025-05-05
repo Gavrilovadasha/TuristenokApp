@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -29,6 +30,16 @@ class HotelsFragment : Fragment(R.layout.fragment_hotels) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Обработка клика по кнопке "назад"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.back_button).setOnClickListener {
+            val fragmentManager = requireActivity().supportFragmentManager
+            if (fragmentManager.backStackEntryCount > 0) {
+                fragmentManager.popBackStack() // Возвращаемся к предыдущему фрагменту
+            } else {
+                requireActivity().finish() // Закрываем активити, если стек пуст
+            }
+        }
 
         // Инициализация элементов
         viewPager = view.findViewById(R.id.viewPager)

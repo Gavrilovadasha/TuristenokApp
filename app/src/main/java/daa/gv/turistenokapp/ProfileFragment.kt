@@ -16,6 +16,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
@@ -26,12 +28,10 @@ import java.io.FileOutputStream
 import java.util.UUID
 
 class ProfileFragment : Fragment() {
-
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private lateinit var userNameDisplay: TextView
     private lateinit var avatarButton: ImageButton
-
     private var selectedImageUri: Uri? = null
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
 
@@ -50,24 +50,44 @@ class ProfileFragment : Fragment() {
         avatarButton = view.findViewById(R.id.btn_avatar)
 
         // Получаем кнопку "Выйти" по ID
-        val exitButton: TextView = view.findViewById(R.id.exit_profile)
+        val exitButton: Button = view.findViewById(R.id.exit_profile)
 
         // Устанавливаем обработчик на кнопку "Выйти"
         exitButton.setOnClickListener {
-            // Выход из аккаунта Firebase
-            auth.signOut()
+            // Создаем диалог подтверждения
+            val builder = AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
+            builder.setTitle("Выход")
+            builder.setMessage("Вы действительно хотите выйти из аккаунта?")
 
-            // Перенаправляем на фрагмент авторизации или главную страницу
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(
-                R.id.container,
-                AvtorizFragment()
-            )  // Перенаправляем на экран авторизации
-            transaction.addToBackStack(null)  // Добавляем в back stack
-            transaction.commit()
+            // Действие при подтверждении
+            builder.setPositiveButton("Да") { dialog, which ->
+                // Выход из аккаунта Firebase
+                auth.signOut()
 
-            // Выводим уведомление об успешном выходе
-            Toast.makeText(requireContext(), "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show()
+                // Перенаправляем на фрагмент авторизации
+                val transaction = parentFragmentManager.beginTransaction()
+                transaction.replace(
+                    R.id.container,
+                    AvtorizFragment()
+                )  // Перенаправляем на экран авторизации
+                transaction.addToBackStack(null)  // Добавляем в back stack
+                transaction.commit()
+
+                // Выводим уведомление об успешном выходе
+                Toast.makeText(requireContext(), "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show()
+            }
+
+            // Действие при отмене
+            builder.setNegativeButton("Нет") { dialog, which ->
+                dialog.dismiss() // Просто закрываем диалог
+            }
+
+            // Создаем и показываем диалог
+            val dialog = builder.create()
+            dialog.show()
+
+            // После показа диалога можно изменить цвета
+            dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_background) // Фон диалога
         }
 
         // Регистрация результата выбора изображения
@@ -82,9 +102,11 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+
         avatarButton.setOnClickListener {
             openGallery()
         }
+
         // Загрузка данных пользователя
         loadUserData()
 
@@ -123,27 +145,23 @@ class ProfileFragment : Fragment() {
             // Создаем файл для изображения с именем, основанным на UID
             val file = File(userFolder, "$userId.jpg")
             val outputStream = FileOutputStream(file)
-
             val buffer = ByteArray(1024)
             var length: Int
             while (inputStream!!.read(buffer).also { length = it } > 0) {
                 outputStream.write(buffer, 0, length)
             }
-
             outputStream.flush()
             outputStream.close()
             inputStream.close()
 
             // Сохраняем путь к изображению в SharedPreferences
             saveImageUriToSharedPreferences(file.toUri())
-
             Toast.makeText(requireContext(), "Фото сохранено локально: ${file.absolutePath}", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Log.e("ProfileFragment", "Ошибка сохранения изображения локально", e)
             Toast.makeText(requireContext(), "Ошибка сохранения фото", Toast.LENGTH_SHORT).show()
         }
     }
-
 
     private fun saveImageUriToSharedPreferences(imageUri: Uri) {
         val sharedPreferences = requireContext().getSharedPreferences("user_profile", Context.MODE_PRIVATE)
@@ -152,11 +170,9 @@ class ProfileFragment : Fragment() {
         editor.apply()
     }
 
-
     private fun loadImageFromSharedPreferences() {
         val sharedPreferences = requireContext().getSharedPreferences("user_profile", Context.MODE_PRIVATE)
         val imageUriString = sharedPreferences.getString("avatar_uri", null)
-
         if (imageUriString != null) {
             val imageUri = Uri.parse(imageUriString)
             avatarButton.setImageURI(imageUri) // Устанавливаем изображение
@@ -170,7 +186,6 @@ class ProfileFragment : Fragment() {
         // Путь к папке с изображениями
         val userFolder = File(requireContext().filesDir, "user_images")
         val file = File(userFolder, "$userId.jpg")
-
         if (file.exists()) {
             // Устанавливаем изображение в кнопку аватара
             avatarButton.setImageURI(Uri.fromFile(file))
@@ -179,7 +194,6 @@ class ProfileFragment : Fragment() {
             avatarButton.setImageResource(R.drawable.avatar)
         }
     }
-
 
     private fun loadUserData() {
         // Получаем текущего пользователя
@@ -206,14 +220,10 @@ class ProfileFragment : Fragment() {
                 }
                 // Загрузка изображения после того, как данные пользователя загружены
                 loadImageFromInternalStorage()
-
             }
-
             .addOnFailureListener { e ->
                 Log.e("ProfileFragment", "Ошибка загрузки данных пользователя", e)
                 Toast.makeText(requireContext(), "Ошибка загрузки данных", Toast.LENGTH_SHORT).show()
             }
     }
 }
-
-

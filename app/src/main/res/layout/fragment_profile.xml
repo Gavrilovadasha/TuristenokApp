@@ -78,11 +78,11 @@
 
     <!-- Кнопка "Избранное" -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_favourites"
+        android:id="@+id/exit_profile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/font"
-        android:text="Избранное"
+        android:text="Выйти"
         android:textColor="#FEF0D3"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -94,19 +94,5 @@
         app:layout_constraintTop_toBottomOf="@id/btn_my_routes"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="32dp"/>
-
-    <!-- Кнопка "Выйти" -->
-    <TextView
-        android:id="@+id/exit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Выйти"
-        android:fontFamily="@font/font"
-        android:textColor="#000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
