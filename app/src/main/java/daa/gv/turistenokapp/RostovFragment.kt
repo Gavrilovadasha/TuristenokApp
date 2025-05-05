@@ -40,12 +40,87 @@ class RostovFragment : Fragment() {
         view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_mirtop_sad).setOnClickListener {
             openLandmarkDetail("2HqognBoWLbifedGxZJt") // Укажите ID нужной достопримечательности
         }
+
+
+
+
+        // Обработка клика по кнопке для "Гостиница «Усадьба Плешанова»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_usadba_pleshanova).setOnClickListener {
+            openHotelsDetail("q8XXhLcsXxR1B8UIngoC") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Отель-ресторан «Рождественский»»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_hotel_rozdestvenskii).setOnClickListener {
+            openHotelsDetail("MKmRg2MZkxMf26kbuwRM") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Отель «Бравис»»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_hotel_bravis).setOnClickListener {
+            openHotelsDetail("AgSVg0CfsjMCCg81SDJX") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Отель «Ростовский»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_hotel_rostovskii).setOnClickListener {
+            openHotelsDetail("NSfouSwT03pcQQavYlWK") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Апарт-отель «ЛофтАпарт»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_hotel_loft_appart).setOnClickListener {
+            openHotelsDetail("5vYgaRRS6aufu6orWzuK") // Укажите ID нужной достопримечательности
+        }
+
+
+
+
+
+        // Обработка клика по кнопке для "Ресторан «Птичий двор»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_ptich_dvor).setOnClickListener {
+            openRestaurantDetail("RPVDUgnr7RFMU4wPbZEn") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Ресторан «Рождественский»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_rozdestvenskii).setOnClickListener {
+            openRestaurantDetail("aWOjpTOXyj0XPTtYnIWO") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Ресторан «Русское подворье»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_russ_podvorie).setOnClickListener {
+            openRestaurantDetail("aLDDAGHgHM7Hdxnufzko") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Ресторан «Покровские ворота»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_pokr_vorota).setOnClickListener {
+            openRestaurantDetail("ZDyoEzxJuGf4PBpjIKvb") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для "Ресторан «Финифть»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_finift).setOnClickListener {
+            openRestaurantDetail("y7RCXDIP4Vi6jHDa38Lz") // Укажите ID нужной достопримечательности
+        }
+
+
     }
 
     private fun openLandmarkDetail(documentId: String) {
         val landmarkFragment = LandmarkFragment.newInstance(documentId)
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(daa.gv.turistenokapp.R.id.container, landmarkFragment) // Используем контейнер активити
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun openHotelsDetail(documentId: String) {
+        val hotelsFragment = HotelsFragment.newInstance(documentId)
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(daa.gv.turistenokapp.R.id.container, hotelsFragment) // Используем контейнер активити
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun openRestaurantDetail(documentId: String) {
+        val restaurantFragment = RestaurantFragment.newInstance(documentId)
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(daa.gv.turistenokapp.R.id.container, restaurantFragment) // Используем контейнер активити
             .addToBackStack(null)
             .commit()
     }

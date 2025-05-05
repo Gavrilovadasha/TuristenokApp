@@ -22,21 +22,27 @@ class SelectRoutesFragment : Fragment() {
 
     private val routeLandmarkMap = mapOf(
         "HKfL2WQXbofhyroQ6Xtc" to listOf("landmark1", "landmark2", "landmark3"),
-        "ROUTE_ID_2" to listOf("landmark4", "landmark5"),
-        "ROUTE_ID_3" to listOf("landmark6", "landmark7", "landmark8")
+        "SaWwvYH3vMtyAzKZNxYL" to listOf("landmark4", "landmark5"),
+        "vgY4ncjUxDplnq39smpD" to listOf("landmark6", "landmark7", "landmark8")
     )
 
     private val routeIdMap = mapOf(
         "Маршрут через века: от Софии до Волхова" to "HKfL2WQXbofhyroQ6Xtc",
-        "Псков" to "ROUTE_ID_2",
-        "Старая Ладога" to "ROUTE_ID_3",
-        "Ростов Великий" to "ROUTE_ID_4"
+        "Сердце Пскова: путешествие сквозь время" to "SaWwvYH3vMtyAzKZNxYL",
+        "Староладожские хроники: путешествие в колыбель Руси" to "vgY4ncjUxDplnq39smpD",
+        "Ростовская сага: два дня в городе золотых куполов" to "V49hZklnOB0I8r0RtMjl",
+        "Три дня в Суздале: где время останавливается" to "XYYUGBsdTN9PFFQz77QD"
+
     )
 
     private lateinit var cities_container: LinearLayout
     private val citiesData = mapOf(
-        "Маршрут через века: от Софии до Волхова" to R.drawable.nov_routes
-    )
+        "Маршрут через века: от Софии до Волхова" to R.drawable.routes_btn,
+        "Сердце Пскова: путешествие сквозь время" to R.drawable.routes_pskov,
+        "Староладожские хроники: путешествие в колыбель Руси" to R.drawable.routes_ladoga,
+        "Ростовская сага: два дня в городе золотых куполов" to R.drawable.routes_rostov,
+        "Три дня в Суздале: где время останавливается" to R.drawable.routes_suzdal,
+        )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -112,7 +118,7 @@ class SelectRoutesFragment : Fragment() {
                 gravity = android.view.Gravity.START or android.view.Gravity.TOP
                 setMargins(
                     15.dpToPx(), // 24dp
-                    35.dpToPx(),
+                    45.dpToPx(),
                     10,
                     0
                 )
@@ -120,8 +126,7 @@ class SelectRoutesFragment : Fragment() {
             text = cityName.replace("  ", "\n")
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 32f)
             setTypeface(resources.getFont(R.font.font))
-            setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
-        }
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.bezh))        }
 
         frameLayout.addView(imageButton)
         frameLayout.addView(textView)

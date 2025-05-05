@@ -78,6 +78,34 @@ class PskovFragment : Fragment() {
         view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_hotel_yPokrovki).setOnClickListener {
             openHotelsDetail("UDVo1WTGPQpvHBW7NnKe") // Укажите ID нужной достопримечательности
         }
+
+
+
+
+        // Обработка клика по кнопке для "Ресторан «Покровский»"
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_pokrovskiy).setOnClickListener {
+            openRestaurantDetail("Jjjsedg6nHFSW9Ojg6tB") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Рестобар «Моя история»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_my_history).setOnClickListener {
+            openRestaurantDetail("iQAwBSKGG0KAGimvZqyy") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Ресторан Самовар
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_samovar).setOnClickListener {
+            openRestaurantDetail("8GK4zyRYIRXv0pPR7VFf") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Таверна «Пожарка»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_pozarka).setOnClickListener {
+            openRestaurantDetail("TjcYhrVnEVngz7iNatJy") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Ресторан «Примостье»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_primostie).setOnClickListener {
+            openRestaurantDetail("RY5BEYvZ70tY7FneAURP") // Укажите ID нужной достопримечательности
+        }
     }
 
     private fun openLandmarkDetail(documentId: String) {
@@ -92,6 +120,14 @@ class PskovFragment : Fragment() {
         val hotelsFragment = HotelsFragment.newInstance(documentId)
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(daa.gv.turistenokapp.R.id.container, hotelsFragment) // Используем контейнер активити
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun openRestaurantDetail(documentId: String) {
+        val restaurantFragment = RestaurantFragment.newInstance(documentId)
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(daa.gv.turistenokapp.R.id.container, restaurantFragment) // Используем контейнер активити
             .addToBackStack(null)
             .commit()
     }

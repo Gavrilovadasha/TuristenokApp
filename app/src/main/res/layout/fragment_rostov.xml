@@ -198,13 +198,13 @@
                         android:text="Отели"/>
 
                     <ImageButton
-                        android:id="@+id/btn_hotel_akron"
+                        android:id="@+id/btn_usadba_pleshanova"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/hotel_akron"
+                        android:src="@drawable/usadba_pleshanova"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -217,18 +217,18 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/white"
-                        android:text="Отель «Акрон»"
+                        android:text="Гостиница «Усадьба Плешанова»"
                         android:layout_gravity="left"/>
 
 
                     <ImageButton
-                        android:id="@+id/btn_hotel_bianki"
+                        android:id="@+id/btn_hotel_rozdestvenskii"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="230dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/hotel_bianki"
+                        android:src="@drawable/hotel_rozdestvenskii"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -241,17 +241,17 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/white"
-                        android:text="Отель «БИАНКИ»"
+                        android:text="Отель-ресторан «Рождественский»"
                         android:layout_gravity="left"/>
 
                     <ImageButton
-                        android:id="@+id/btn_gostinitsa_volxov"
+                        android:id="@+id/btn_hotel_bravis"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="450dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/gostinitsa_volxov"
+                        android:src="@drawable/hotel_bravis"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -264,17 +264,17 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/white"
-                        android:text="Гостиница «Волхов»"
+                        android:text="Отель «Бравис»"
                         android:layout_gravity="left"/>
 
                     <ImageButton
-                        android:id="@+id/btn_hotel_raxmaninov"
+                        android:id="@+id/btn_hotel_rostovskii"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="670dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/hotel_raxmaninov"
+                        android:src="@drawable/hotel_rostovskii"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -287,18 +287,18 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/white"
-                        android:text="Отель «Рахманинов»"
+                        android:text="Отель «Ростовский»"
                         android:layout_gravity="left"/>
 
 
                     <ImageButton
-                        android:id="@+id/btn_hotel_karelinn"
+                        android:id="@+id/btn_hotel_loft_appart"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="890dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/hotel_karelinn"
+                        android:src="@drawable/hotel_loft_appart"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -311,7 +311,7 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/white"
-                        android:text="Отель «Карелинн»"
+                        android:text="Апарт-отель «ЛофтАпарт»"
                         android:layout_gravity="left"/>
                 </FrameLayout>
             </HorizontalScrollView>
@@ -340,13 +340,13 @@
 
 
                     <ImageButton
-                        android:id="@+id/btn_rest_marusya"
+                        android:id="@+id/btn_rest_ptich_dvor"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="15dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/rest_marusya"
+                        android:src="@drawable/rest_ptich_dvor"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -359,17 +359,17 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/black"
-                        android:text="Ресторан «Маруся»"
+                        android:text="Ресторан «Птичий двор»"
                         android:layout_gravity="left"/>
 
                     <ImageButton
-                        android:id="@+id/btn_chaixona_skazka"
+                        android:id="@+id/btn_rest_pokr_vorota"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="670dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/chaixona_skazka"
+                        android:src="@drawable/rest_pokr_vorota"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -382,17 +382,17 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/black"
-                        android:text="Чайхана «Сказка»"
+                        android:text="Ресторан «Покровские ворота»"
                         android:layout_gravity="left"/>
 
                     <ImageButton
-                        android:id="@+id/btn_rest_geogr"
+                        android:id="@+id/btn_rest_russ_podvorie"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="450dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/rest_geogr"
+                        android:src="@drawable/rest_russ_podvorie"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -405,18 +405,18 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/black"
-                        android:text="Ресторан «География»"
+                        android:text="Ресторан «Русское подворье»"
                         android:layout_gravity="left"/>
 
 
                     <ImageButton
-                        android:id="@+id/btn_rest_pryanik"
+                        android:id="@+id/btn_rest_rozdestvenskii"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="230dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/rest_pryanik"
+                        android:src="@drawable/rest_rozdestvenskii"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -429,17 +429,17 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/black"
-                        android:text="Ресторан «Пряник»"
+                        android:text="Ресторан «Рождественский»"
                         android:layout_gravity="left"/>
 
                     <ImageButton
-                        android:id="@+id/btn_rest_teplo"
+                        android:id="@+id/btn_rest_finift"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="890dp"
                         android:background="@drawable/button_dostoprim"
-                        android:src="@drawable/rest_teplo"
+                        android:src="@drawable/rest_finift"
                         android:scaleType="centerCrop"
                         android:adjustViewBounds="true"
                         android:clipToOutline="true" />
@@ -452,7 +452,7 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/font"
                         android:textColor="@color/black"
-                        android:text="Траттория «Тепло»"
+                        android:text="Ресторан «Финифть»"
                         android:layout_gravity="left"/>
                 </FrameLayout>
 

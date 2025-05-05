@@ -62,6 +62,23 @@ class StarayaLadogaFragment : Fragment() {
         view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_hotel_strekovets).setOnClickListener {
             openHotelsDetail("F2BlkaPz3ZbeMH8rvVPu") // Укажите ID нужной достопримечательности
         }
+
+
+        // Обработка клика по кнопке для Кафе «Древняя Ладога»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_drevn_ladoga).setOnClickListener {
+            openRestaurantDetail("KTAoBvYTdeaNKHWSVzbM") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Ресторан «Князь Рюрик»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_knyaz_rurik).setOnClickListener {
+            openRestaurantDetail("dxrQNfUPs1flBDbLKR77") // Укажите ID нужной достопримечательности
+        }
+
+        // Обработка клика по кнопке для Ресторан «Староладожская дача»
+        view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.btn_rest_st_lad_dacha).setOnClickListener {
+            openRestaurantDetail("C3NllwNiGgkIAUaC9XG6") // Укажите ID нужной достопримечательности
+        }
+
     }
 
     private fun openLandmarkDetail(documentId: String) {
@@ -79,4 +96,11 @@ class StarayaLadogaFragment : Fragment() {
             .commit()
     }
 
+    private fun openRestaurantDetail(documentId: String) {
+        val restaurantFragment = RestaurantFragment.newInstance(documentId)
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(daa.gv.turistenokapp.R.id.container, restaurantFragment) // Используем контейнер активити
+            .addToBackStack(null)
+            .commit()
+    }
 }
