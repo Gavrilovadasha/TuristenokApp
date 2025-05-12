@@ -3,6 +3,7 @@ package daa.gv.turistenokapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -108,9 +109,9 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
                         name ?: "Имя отсутствует"
 
                     // Загрузка описания
-                    val description = document.getString("description")
-                    view?.findViewById<TextView>(R.id.restaurantDescription)?.text =
-                        description ?: "Описание отсутствует"
+                    val description = document.getString("description") ?: ""
+                    val formattedText = Html.fromHtml(description, Html.FROM_HTML_MODE_COMPACT)
+                    view?.findViewById<TextView>(R.id.restaurantDescription)?.text = formattedText
 
                     // Загрузка списка фотографий
                     val img = document.get("img") as? Map<*, *>

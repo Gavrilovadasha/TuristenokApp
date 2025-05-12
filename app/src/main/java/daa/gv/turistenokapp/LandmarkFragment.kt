@@ -3,9 +3,9 @@ package daa.gv.turistenokapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.Html
 import android.transition.TransitionManager
 import android.util.Log
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View

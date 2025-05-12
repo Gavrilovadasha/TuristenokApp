@@ -61,6 +61,7 @@ class HomeFragment : Fragment() {
             // Если пользователь не авторизован, показываем заглушку
             avatarButton.visibility = View.GONE
             avatarStub.visibility = View.VISIBLE
+            welcomeText.visibility = View.GONE
         }
 
         // Обработка клика по кнопке аватара
