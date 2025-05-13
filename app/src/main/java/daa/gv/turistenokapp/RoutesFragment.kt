@@ -45,6 +45,24 @@ class RoutesFragment : Fragment() {
                 showToast("Ошибка: ID маршрута не найден")
             }
         }
+
+        val typeWriterText = view.findViewById<TextView>(R.id.textRoutes)
+        val fullText = "Узнайте больше о маршруте!"
+        var index = 0
+        val delay: Long = 80 // задержка между буквами
+
+        val handler = android.os.Handler()
+        val runnable = object : Runnable {
+            override fun run() {
+                if (index <= fullText.length) {
+                    typeWriterText.text = fullText.substring(0, index)
+                    index++
+                    handler.postDelayed(this, delay)
+                }
+            }
+        }
+        handler.post(runnable)
+
     }
 
     private fun setupFirestore() {

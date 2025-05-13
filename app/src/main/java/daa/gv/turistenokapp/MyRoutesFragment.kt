@@ -49,7 +49,27 @@ class MyRoutesFragment : Fragment() {
         )
         recyclerView.adapter = adapter
 
+        val typeWriterText = view.findViewById<TextView>(R.id.typeWriterText)
+        val fullText = "Список моих маршрутов \uD83D\uDDFA\uFE0F"
+        var index = 0
+        val delay: Long = 80 // задержка между буквами
+
+        val handler = android.os.Handler()
+        val runnable = object : Runnable {
+            override fun run() {
+                if (index <= fullText.length) {
+                    typeWriterText.text = fullText.substring(0, index)
+                    index++
+                    handler.postDelayed(this, delay)
+                }
+            }
+        }
+        handler.post(runnable)
+
+
         loadUserRoutes()
+
+
     }
 
     private fun updateViews() {
