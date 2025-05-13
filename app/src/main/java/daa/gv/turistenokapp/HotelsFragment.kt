@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -28,9 +29,12 @@ class HotelsFragment : Fragment(R.layout.fragment_hotels) {
     private lateinit var db: FirebaseFirestore
     private var mapUrl: String? = null
     private var siteUrl: String? = null
+    private lateinit var progressBar: ProgressBar
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        progressBar = view.findViewById(R.id.progressBar)
 
         // Обработка клика по кнопке "назад"
         view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.back_button).setOnClickListener {
@@ -93,15 +97,23 @@ class HotelsFragment : Fragment(R.layout.fragment_hotels) {
             }
         }
     }
+    private fun showLoading() {
+        progressBar.visibility = View.VISIBLE
+    }
 
+    private fun hideLoading() {
+        progressBar.visibility = View.GONE
+    }
     /**
      * Загрузка данных достопримечательности из Firestore.
      * @param documentId Идентификатор документа.
      */
     private fun loadRestData(documentId: String) {
+        showLoading()
         db.collection("hotels").document(documentId)
             .get()
             .addOnSuccessListener { document ->
+                hideLoading()
                 if (document != null && document.exists()) {
                     // Загрузка имени
                     val name = document.getString("name")
@@ -184,6 +196,7 @@ class HotelsFragment : Fragment(R.layout.fragment_hotels) {
                 }
             }
             .addOnFailureListener { exception ->
+                hideLoading()
                 view?.findViewById<TextView>(R.id.hotelDescription)?.text =
                     "Ошибка загрузки: ${exception.message}"
                 mapLinkTextView.text = "Ошибка загрузки"

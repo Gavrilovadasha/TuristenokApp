@@ -63,6 +63,19 @@
                 android:orientation="vertical"
                 android:paddingTop="16dp"/>
 
+            <TextView
+                android:id="@+id/no_results_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                android:text="По Вашему запросу ничего не найдено"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:fontFamily="@font/font"
+                android:padding="16dp" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

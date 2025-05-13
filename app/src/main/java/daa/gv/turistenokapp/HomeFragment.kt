@@ -86,6 +86,12 @@ class HomeFragment : Fragment() {
         val adapter = SliderAdapter(photos)
         viewPager.adapter = adapter
 
+        // Настраиваем ViewPager2
+        setupViewPagerWildberriesStyle()
+
+        // Автоматическое перелистывание
+        setupAutoSlider()
+
         // Настраиваем начальную позицию
         viewPager.setCurrentItem(1, false)
 

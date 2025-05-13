@@ -54,6 +54,8 @@ class SelectRoutesFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val noResultsText = view.findViewById<TextView>(R.id.no_results_text)
+
 
         cities_container = view.findViewById(R.id.cities_container)
         val searchInput = view.findViewById<EditText>(R.id.search_input2)
@@ -72,10 +74,22 @@ class SelectRoutesFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun filterCities(query: String) {
         cities_container.removeAllViews()
-        val filteredQuery = query.toLowerCase().trim()
 
-        citiesData.forEach { (cityName, cityImageRes) ->
-            if (filteredQuery.isEmpty() || cityName.toLowerCase().contains(filteredQuery)) {
+        val filteredQuery = query.toLowerCase().trim()
+        val filteredCities = if (filteredQuery.isEmpty()) {
+            citiesData.toList()
+        } else {
+            citiesData.filter { (cityName, _) ->
+                cityName.toLowerCase().contains(filteredQuery)
+            }.toList()
+        }
+
+        val noResultsText = view?.findViewById<TextView>(R.id.no_results_text)
+        if (filteredCities.isEmpty()) {
+            noResultsText?.visibility = View.VISIBLE
+        } else {
+            noResultsText?.visibility = View.GONE
+            filteredCities.forEach { (cityName, cityImageRes) ->
                 addCityToContainer(cityName, cityImageRes)
             }
         }

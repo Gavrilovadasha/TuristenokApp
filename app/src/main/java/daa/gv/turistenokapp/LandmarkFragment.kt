@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
@@ -47,10 +48,16 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
     private lateinit var reviewsRecyclerView: RecyclerView
     private lateinit var averageRatingTextView: TextView
     private var isReviewsVisible = false
+    private lateinit var progressBar: ProgressBar
+    private var loadCount = 0
+    private val totalLoads = 3
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        progressBar = view.findViewById(R.id.progressBar)
 
         // Обработка клика по кнопке "назад"
         view.findViewById<ImageButton>(daa.gv.turistenokapp.R.id.back_button).setOnClickListener {
@@ -75,6 +82,21 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
             toggleReviewsVisibility(reviewsRecyclerView, arrowIcon, toggleButton)
         }
 
+
+    }
+
+    private fun showLoading() {
+        progressBar.visibility = View.VISIBLE
+    }
+
+    private fun hideLoading() {
+        progressBar.visibility = View.GONE
+    }
+    private fun onSingleLoadComplete() {
+        loadCount++
+        if (loadCount >= totalLoads) {
+            hideLoading()
+        }
     }
 
     private fun initViews(view: View) {
@@ -115,12 +137,16 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
     }
 
     private fun loadData() {
+        showLoading()
+        loadCount = 0
+
         arguments?.getString("documentId")?.let { landmarkId ->
             loadLandmarkData(landmarkId)
             loadReviews(landmarkId)
             loadAverageRating(landmarkId)
         } ?: showToast("Ошибка загрузки данных")
     }
+
 
     private fun loadLandmarkData(documentId: String) {
         db.collection("landmarks").document(documentId)
@@ -131,10 +157,13 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
                 } else {
                     showToast("Достопримечательность не найдена")
                 }
+                onSingleLoadComplete()
             }
             .addOnFailureListener { e ->
                 showToast("Ошибка загрузки: ${e.message}")
+                onSingleLoadComplete()
             }
+
     }
 
     private fun updateUI(document: com.google.firebase.firestore.DocumentSnapshot) {
@@ -237,11 +266,14 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
                     }
                 }
                 reviewsRecyclerView.adapter = ReviewsAdapter(reviews)
+                onSingleLoadComplete()
             }
             .addOnFailureListener { e ->
                 Log.e("LoadReviews", "Error: ${e.message}", e)
                 showToast("Ошибка загрузки отзывов")
+                onSingleLoadComplete()
             }
+
     }
     private fun loadAverageRating(landmarkId: String) {
         db.collection("landmarks").document(landmarkId)
@@ -249,7 +281,12 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
             .addOnSuccessListener { document ->
                 val average = document.getDouble("averageRating") ?: 0.0
                 averageRatingTextView.text = "Средний рейтинг: %.1f".format(Locale.getDefault(), average)
+                onSingleLoadComplete()
             }
+            .addOnFailureListener {
+                onSingleLoadComplete()
+            }
+
     }
 
     private fun updateAverageRating(landmarkId: String, newRating: Float) {

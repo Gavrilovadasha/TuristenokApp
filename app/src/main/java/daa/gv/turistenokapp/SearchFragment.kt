@@ -41,6 +41,7 @@ class SearchFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val noResultsText = view.findViewById<TextView>(R.id.no_results_text)
 
         // Находим контейнер для отображения городов
         cities_container = view.findViewById(R.id.cities_container) // Теперь это LinearLayout
@@ -65,24 +66,28 @@ class SearchFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun filterCities(query: String) {
-        cities_container.removeAllViews() // Очищаем контейнер
+        cities_container.removeAllViews()
 
         val filteredQuery = query.toLowerCase().trim()
-
-        // Если запрос пустой, отображаем все города
-        if (filteredQuery.isEmpty()) {
-            citiesData.forEach { (cityName, cityImageRes) ->
-                addCityToContainer(cityName, cityImageRes)
-            }
+        val filteredCities = if (filteredQuery.isEmpty()) {
+            citiesData.toList()
         } else {
-            // Иначе фильтруем города по запросу
-            citiesData.forEach { (cityName, cityImageRes) ->
-                if (cityName.toLowerCase().contains(filteredQuery)) {
-                    addCityToContainer(cityName, cityImageRes)
-                }
+            citiesData.filter { (cityName, _) ->
+                cityName.toLowerCase().contains(filteredQuery)
+            }.toList()
+        }
+
+        val noResultsText = view?.findViewById<TextView>(R.id.no_results_text)
+        if (filteredCities.isEmpty()) {
+            noResultsText?.visibility = View.VISIBLE
+        } else {
+            noResultsText?.visibility = View.GONE
+            filteredCities.forEach { (cityName, cityImageRes) ->
+                addCityToContainer(cityName, cityImageRes)
             }
         }
     }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun addCityToContainer(cityName: String, cityImageRes: Int) {

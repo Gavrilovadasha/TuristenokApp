@@ -6,6 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LandmarkFragment">
 
+    <!-- Кружок загрузки -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
     <!-- Кнопка "назад" -->
     <ImageButton
         android:id="@+id/back_button"
@@ -196,5 +204,7 @@
                 android:textColor="@color/black"/>
 
         </LinearLayout>
+
     </ScrollView>
+
 </FrameLayout>
