@@ -53,8 +53,6 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
     private val totalLoads = 3
 
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         progressBar = view.findViewById(R.id.progressBar)
@@ -332,7 +330,7 @@ class LandmarkFragment : Fragment(R.layout.fragment_landmark) {
                 "maps" to mapUrl,
                 "imageUrls" to firstImageUrl
             ))
-            .addOnSuccessListener { showToast("Добавлено в маршруты") }
+            .addOnSuccessListener { showToast("Достопримечательность успешно добавлена в «Мои маршруты»") }
             .addOnFailureListener { e -> showToast("Ошибка: ${e.message}") }
     }
 

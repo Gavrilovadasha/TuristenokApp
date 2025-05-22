@@ -246,12 +246,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun openLandmarkDetail(documentId: String) {
-        val landmarkFragment = LandmarkFragment.newInstance(documentId)
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(daa.gv.turistenokapp.R.id.container, landmarkFragment) // Используем контейнер активити
-            .addToBackStack(null)
-            .commit()
+        val activity = requireActivity() as? MainActivity ?: return
+        activity.openDetailFragment(documentId, "landmark") { id ->
+            LandmarkFragment.newInstance(id)
+        }
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

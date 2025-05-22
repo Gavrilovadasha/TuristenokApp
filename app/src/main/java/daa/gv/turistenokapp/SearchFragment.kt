@@ -149,12 +149,14 @@ class SearchFragment : Fragment() {
             else -> throw IllegalArgumentException("Unknown city")
         }
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun refreshUI() {
+        val searchInput = view?.findViewById<EditText>(R.id.search_input2)
+        val query = searchInput?.text.toString()
+        filterCities(query)
+    }
     private fun navigateToCityFragment(fragment: Fragment) {
-        val transaction = parentFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        (requireActivity() as MainActivity).switchToCityFragment(fragment)
     }
 
     private fun Int.dpToPx(): Int {

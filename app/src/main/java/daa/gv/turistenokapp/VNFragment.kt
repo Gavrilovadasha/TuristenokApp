@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+
 
 
 class VNFragment : Fragment() {
@@ -115,26 +117,23 @@ class VNFragment : Fragment() {
     }
 
     private fun openLandmarkDetail(documentId: String) {
-        val landmarkFragment = LandmarkFragment.newInstance(documentId)
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(daa.gv.turistenokapp.R.id.container, landmarkFragment) // Используем контейнер активити
-            .addToBackStack(null)
-            .commit()
+        (requireActivity() as? MainActivity)?.openDetailFragment(
+            documentId,
+            "LandmarkFragment"
+        ) { id -> LandmarkFragment.newInstance(id) }
     }
 
     private fun openRestaurantDetail(documentId: String) {
-        val restaurantFragment = RestaurantFragment.newInstance(documentId)
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(daa.gv.turistenokapp.R.id.container, restaurantFragment) // Используем контейнер активити
-            .addToBackStack(null)
-            .commit()
+        (requireActivity() as? MainActivity)?.openDetailFragment(
+            documentId,
+            "RestaurantFragment"
+        ) { id -> RestaurantFragment.newInstance(id) }
     }
 
     private fun openHotelsDetail(documentId: String) {
-        val hotelsFragment = HotelsFragment.newInstance(documentId)
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(daa.gv.turistenokapp.R.id.container, hotelsFragment) // Используем контейнер активити
-            .addToBackStack(null)
-            .commit()
+        (requireActivity() as? MainActivity)?.openDetailFragment(
+            documentId,
+            "HotelsFragment"
+        ) { id -> HotelsFragment.newInstance(id) }
     }
 }

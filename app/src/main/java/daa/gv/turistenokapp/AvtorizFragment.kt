@@ -77,7 +77,7 @@ class AvtorizFragment : Fragment() {
                         Toast.makeText(requireContext(), "Добро пожаловать!", Toast.LENGTH_SHORT).show()
                     } else {
                         // Ошибка авторизации
-                        Toast.makeText(requireContext(), "Ошибка авторизации: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Ошибка авторизации: Вы ввели неверный логин или пароль", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
