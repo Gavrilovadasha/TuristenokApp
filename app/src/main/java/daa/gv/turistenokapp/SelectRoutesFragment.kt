@@ -152,8 +152,7 @@ class SelectRoutesFragment : Fragment() {
         val routesFragment = RoutesFragment.newInstance(documentId, landmarkIds)
 
         requireActivity().supportFragmentManager.beginTransaction()
-            .hide(this)  // скрыть SelectRoutesFragment, но не удалять
-            .add(R.id.container, routesFragment)
+            .replace(R.id.container, routesFragment)
             .addToBackStack(null)
             .commit()
     }

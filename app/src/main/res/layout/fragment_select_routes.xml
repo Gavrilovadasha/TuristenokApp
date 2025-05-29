@@ -56,13 +56,12 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Контейнер для контента -->
             <LinearLayout
                 android:id="@+id/cities_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="16dp"/>
-
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
             <TextView
                 android:id="@+id/no_results_text"
                 android:layout_width="match_parent"
@@ -75,7 +74,7 @@
                 android:visibility="gone"
                 android:fontFamily="@font/font"
                 android:padding="16dp" />
-
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>
