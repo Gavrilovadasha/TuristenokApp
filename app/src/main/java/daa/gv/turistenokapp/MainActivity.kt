@@ -135,19 +135,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showFragment(fragment: Fragment) {
+        if (currentFragment == fragment) return // Не переключаемся на тот же фрагмент
+
         val manager = supportFragmentManager
         val transaction = manager.beginTransaction()
 
-        // Скрываем все фрагменты кроме нужного
-        manager.fragments.forEach {
-            if (it == fragment) {
-                transaction.show(it)
-            } else {
-                transaction.hide(it)
-            }
+        // Скрываем текущий фрагмент
+        transaction.hide(currentFragment)
+
+        // Показываем нужный, если он уже добавлен
+        if (!fragment.isAdded) {
+            transaction.add(R.id.container, fragment)
         }
 
+        transaction.show(fragment)
         transaction.commit()
+
         currentFragment = fragment
     }
 

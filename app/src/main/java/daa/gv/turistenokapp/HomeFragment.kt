@@ -96,23 +96,26 @@ class HomeFragment : Fragment() {
         viewPager.setCurrentItem(1, false)
 
         // Добавляем слушатель состояния авторизации
+
+
         auth.addAuthStateListener { firebaseAuth ->
             val user = firebaseAuth.currentUser
             if (user != null) {
-                // Пользователь вошел
                 avatarButton.visibility = View.VISIBLE
                 avatarStub.visibility = View.GONE
-                // Загружаем аватар
-                loadImageFromSharedPreferences()
+                welcomeText.visibility = View.VISIBLE
+                updateWelcomeMessage()
+                // Загружаем аватар заново
+                Handler(Looper.getMainLooper()).post {
+                    loadImageFromSharedPreferences()
+                }
             } else {
-                // Пользователь вышел
                 avatarButton.visibility = View.GONE
                 avatarStub.visibility = View.VISIBLE
+                welcomeText.visibility = View.GONE
             }
         }
 
-        // Обновляем текст приветствия
-        updateWelcomeMessage()
 
         return rootView
     }
@@ -125,9 +128,16 @@ class HomeFragment : Fragment() {
             avatarButton.setImageURI(imageUri) // Устанавливаем изображение
         } else {
             // Если изображение не найдено, устанавливаем дефолтное
-            avatarButton.setImageResource(R.drawable.avatar)
+            avatarButton.setImageResource(R.drawable.man_avatar)
         }
     }
+    override fun onResume() {
+        super.onResume()
+        if (auth.currentUser != null) {
+            loadImageFromSharedPreferences()
+        }
+    }
+
 
     private fun openProfileFragment() {
         val profileFragment = ProfileFragment()
@@ -251,7 +261,6 @@ class HomeFragment : Fragment() {
             LandmarkFragment.newInstance(id)
         }
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
