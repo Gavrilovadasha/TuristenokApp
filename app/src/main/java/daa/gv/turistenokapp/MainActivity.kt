@@ -156,24 +156,11 @@ class MainActivity : AppCompatActivity() {
 
     fun switchToCityFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-
-        // Скрываем текущий фрагмент
-        transaction.hide(currentFragment)
-
-        // Проверяем, добавлен ли фрагмент уже (например, чтобы не дублировать)
         val tag = fragment::class.java.simpleName
-        val existing = supportFragmentManager.findFragmentByTag(tag)
 
-        if (existing == null) {
-            // Добавляем новый фрагмент и сохраняем в back stack
-            transaction.add(R.id.container, fragment, tag)
-            transaction.addToBackStack(tag)
-        } else {
-            // Если уже добавлен, просто показываем
-            transaction.show(existing)
-            transaction.addToBackStack(tag)
-        }
-
+        // Заменяем текущий фрагмент на новый и добавляем в бэкстек
+        transaction.replace(R.id.container, fragment, tag)
+        transaction.addToBackStack(tag)
         transaction.commit()
 
         currentFragment = fragment
